@@ -1,0 +1,6 @@
+#!/bin/bash
+str="iam from KPI partners"
+for i in $str
+do
+        echo "string is $i"
+done
