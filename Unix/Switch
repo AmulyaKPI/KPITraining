@@ -1,0 +1,9 @@
+#!/bin/bash
+word="arshanapelli"
+case $word in "amulya")
+        echo "amulya";;
+"arshanapelli")
+        echo "arshanapelli";;
+"srisathya")
+        echo "srisathya";;
+esac
