@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "enter a string"
+read s1
+echo "enter another string"
+read s2
+if [ "$s1" = "$s2" ]
+then
+        echo "strings are matched"
+else
+        echo "strings are not matched"
+fi
