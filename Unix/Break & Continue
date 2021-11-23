@@ -1,0 +1,26 @@
+#!/bin/bash
+arr=( red green yellow )
+for i in "${arr[@]}"
+do
+        if [ $i = yellow ]
+        then
+        break
+else
+echo "$i"
+        fi
+done
+
+------------------------------------------
+
+
+#!/bin/bash
+arr=( 1 2 3 4 5 6 7 8 )
+for i in "${arr[@]}"
+do
+        if [ $((i % 2)) -eq 0 ]
+        then
+                continue
+        fi
+        echo "$i"
+
+done
