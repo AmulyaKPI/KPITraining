@@ -1,0 +1,15 @@
+#!/bin/bash
+arr=( 1 2 3 4 5 )
+for i in "${arr[@]}"
+do
+        echo "the array element is $i"
+done
+
+--------------------------------------------
+
+#!/bin/bash
+arr=( red yellow green )
+for i in "${arr[@]}"
+do
+        echo "string element $i"
+done
