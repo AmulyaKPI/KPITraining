@@ -1,0 +1,16 @@
+Amulya
+Arshanapelli
+Sircilla
+96189463
+amulya.arshanapelli@kpipartners.com
+KPI 9084
+#!/bin/bash
+arr=()
+while read -r line;
+do
+        arr+=("$(echo "$line")")
+done<textfile.sh
+for i in "${arr[@]}"
+do
+        echo "$i"
+done
