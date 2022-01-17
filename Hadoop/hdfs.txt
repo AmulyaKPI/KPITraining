@@ -1,0 +1,232 @@
+HDFS:
+--------------------------------
+
+
+
+[cloudera@quickstart ~]$ hdfs dfs -ls
+Found 19 items
+drwx------   - cloudera cloudera          0 2022-01-12 09:57 .staging
+drwxr-xr-x   - cloudera cloudera          0 2020-05-23 23:09 avro_json_write
+drwxr-xr-x   - cloudera cloudera          0 2020-05-22 22:15 csv_dir
+drwxr-xr-x   - cloudera cloudera          0 2022-01-12 09:57 emp
+drwxr-xr-x   - cloudera cloudera          0 2020-06-04 08:36 import_avro
+drwxr-xr-x   - cloudera cloudera          0 2020-05-23 22:56 json_avro_1
+drwxr-xr-x   - cloudera cloudera          0 2020-05-22 22:13 json_dir
+drwxr-xr-x   - cloudera cloudera          0 2020-05-23 22:39 json_orc
+drwxr-xr-x   - cloudera cloudera          0 2020-05-23 22:56 json_orc_1
+drwxr-xr-x   - cloudera cloudera          0 2020-05-23 22:38 json_parquet
+drwxr-xr-x   - cloudera cloudera          0 2020-05-23 22:56 json_parquet_1
+drwxr-xr-x   - cloudera cloudera          0 2020-05-22 22:11 orc_dir
+drwxr-xr-x   - cloudera cloudera          0 2020-05-22 22:14 parquet_dir
+drwxr-xr-x   - cloudera cloudera          0 2020-05-23 23:11 parquet_json_write
+drwxr-xr-x   - cloudera cloudera          0 2020-05-22 13:40 part_dir
+drwxr-xr-x   - cloudera cloudera          0 2020-05-22 14:01 part_dir2
+-rw-r--r--   1 cloudera cloudera         32 2022-01-11 03:13 sample.csv
+-rw-r--r--   1 cloudera cloudera         31 2022-01-10 01:00 sample.txt
+drwxr-xr-x   - cloudera cloudera          0 2020-06-04 09:04 zeyo_dir
+[cloudera@quickstart ~]$ mkdir hadoop
+[cloudera@quickstart ~]$ dir
+avro		  data1		Documents  emp.java		       external_jars	 hadoop_kpi  lib      parquet_write  Public	  sample.csv	  Templates  zeyo_tab.java
+cloudera-manager  Desktop	Downloads  enterprise-deployment.json  external-unified  input.txt   Music    part_dir	     rakeshdata   sample.txt	  Videos
+cm_api.py	  devices.json	eclipse    express-deployment.json     hadoop		 kerberos    parcels  Pictures	     rakeshdata1  sparkjars_exec  workspace
+[cloudera@quickstart ~]$ pwd
+/home/cloudera
+[cloudera@quickstart ~]$ cd /home/cloudera/hadoop
+[cloudera@quickstart hadoop]$ vi sample1.txt
+[cloudera@quickstart hadoop]$ cat sample1.txt
+Hello KPI Partners!!!
+This is Monisha
+Nice to meet you guys.
+[cloudera@quickstart hadoop]$ ls
+sample1.txt
+[cloudera@quickstart hadoop]$ vi practice.csv
+[cloudera@quickstart hadoop]$ cat practice.csv
+Toyota, 2021, 1000000
+BMW, 2020, 1500000
+Innova, 2019, 2400000
+Suzuki, 2022,1600000
+[cloudera@quickstart hadoop]$ hdfs dfs -ls
+Found 19 items
+drwx------   - cloudera cloudera          0 2022-01-12 09:57 .staging
+drwxr-xr-x   - cloudera cloudera          0 2020-05-23 23:09 avro_json_write
+drwxr-xr-x   - cloudera cloudera          0 2020-05-22 22:15 csv_dir
+drwxr-xr-x   - cloudera cloudera          0 2022-01-12 09:57 emp
+drwxr-xr-x   - cloudera cloudera          0 2020-06-04 08:36 import_avro
+drwxr-xr-x   - cloudera cloudera          0 2020-05-23 22:56 json_avro_1
+drwxr-xr-x   - cloudera cloudera          0 2020-05-22 22:13 json_dir
+drwxr-xr-x   - cloudera cloudera          0 2020-05-23 22:39 json_orc
+drwxr-xr-x   - cloudera cloudera          0 2020-05-23 22:56 json_orc_1
+drwxr-xr-x   - cloudera cloudera          0 2020-05-23 22:38 json_parquet
+drwxr-xr-x   - cloudera cloudera          0 2020-05-23 22:56 json_parquet_1
+drwxr-xr-x   - cloudera cloudera          0 2020-05-22 22:11 orc_dir
+drwxr-xr-x   - cloudera cloudera          0 2020-05-22 22:14 parquet_dir
+drwxr-xr-x   - cloudera cloudera          0 2020-05-23 23:11 parquet_json_write
+drwxr-xr-x   - cloudera cloudera          0 2020-05-22 13:40 part_dir
+drwxr-xr-x   - cloudera cloudera          0 2020-05-22 14:01 part_dir2
+-rw-r--r--   1 cloudera cloudera         32 2022-01-11 03:13 sample.csv
+-rw-r--r--   1 cloudera cloudera         31 2022-01-10 01:00 sample.txt
+drwxr-xr-x   - cloudera cloudera          0 2020-06-04 09:04 zeyo_dir
+[cloudera@quickstart hadoop]$ ls
+HDFS practice  practice.csv  sample1.txt
+[cloudera@quickstart hadoop]$ fsck / -files -blocks
+fsck from util-linux-ng 2.17.2
+fsck.ext4: invalid option -- 'i'
+Usage: fsck.ext4 [-panyrcdfvtDFV] [-b superblock] [-B blocksize]
+		[-I inode_buffer_blocks] [-P process_inode_size]
+		[-l|-L bad_blocks_file] [-C fd] [-j external_journal]
+		[-E extended-options] device
+
+Emergency help:
+ -p                   Automatic repair (no questions)
+ -n                   Make no changes to the filesystem
+ -y                   Assume "yes" to all questions
+ -c                   Check for bad blocks and add them to the badblock list
+ -f                   Force checking even if filesystem is marked clean
+ -v                   Be verbose
+ -b superblock        Use alternative superblock
+ -B blocksize         Force blocksize when looking for superblock
+ -j external_journal  Set location of the external journal
+ -l bad_blocks_file   Add to badblocks list
+ -L bad_blocks_file   Set badblocks list
+[cloudera@quickstart hadoop]$ hadoop fsck / -files -blocks
+DEPRECATED: Use of this script to execute hdfs command is deprecated.
+Instead use the hdfs command for it.
+
+Connecting to namenode via http://quickstart.cloudera:50070/fsck?ugi=cloudera&files=1&blocks=1&path=%2F
+FSCK started by cloudera (auth:SIMPLE) from /127.0.0.1 for path / at Thu Jan 13 02:14:02 PST 2022
+/ <dir>
+/benchmarks <dir>
+/hbase <dir>
+/hbase/.tmp <dir>
+/hbase/MasterProcWALs <dir>
+/hbase/WALs <dir>
+/hbase/WALs/quickstart.cloudera,60020,1642064154294 <dir>
+/hbase/archive <dir>
+/hbase/corrupt <dir>
+/hbase/data <dir>
+/hbase/data/default <dir>
+/hbase/data/default/emp1 <dir>
+/hbase/data/default/emp1/.tabledesc <dir>
+/hbase/data/default/emp1/.tabledesc/.tableinfo.0000000001 537 bytes, 1 block(s):  OK
+0. BP-333635372-127.0.0.1-1508779710286:blk_1073743504_2693 len=537 Live_repl=1
+
+/hbase/data/default/emp1/.tmp <dir>
+/hbase/data/default/emp1/40d07c9670bb5af19db3bad4900a6e7b <dir>
+/hbase/data/default/emp1/40d07c9670bb5af19db3bad4900a6e7b/.regioninfo 39 bytes, 1 block(s):  OK
+0. BP-333635372-127.0.0.1-1508779710286:blk_1073743505_2694 len=39 Live_repl=1
+
+/hbase/data/default/emp1/40d07c9670bb5af19db3bad4900a6e7b/emp_data <dir>
+/hbase/data/default/emp1/40d07c9670bb5af19db3bad4900a6e7b/emp_data/e12d11583b7646928a837f71e47e5c86 1064 bytes, 1 block(s):  OK
+0. BP-333635372-127.0.0.1-1508779710286:blk_1073743614_2803 len=1064 Live_repl=1
+
+/hbase/data/default/emp1/40d07c9670bb5af19db3bad4900a6e7b/emp_data/e74d69f459af4dd7bd7635687970548d 1064 bytes, 1 block(s):  OK
+0. BP-333635372-127.0.0.1-1508779710286:blk_1073743853_3042 len=1064 Live_repl=1
+
+/hbase/data/default/emp1/40d07c9670bb5af19db3bad4900a6e7b/per_data <dir>
+/hbase/data/default/emp1/40d07c9670bb5af19db3bad4900a6e7b/per_data/7a5ad4ed665747b2975a87c30c86fb2a 1295 bytes, 1 block(s):  OK
+0. BP-333635372-127.0.0.1-1508779710286:blk_1073744139_3336 len=1295 Live_repl=1
+
+/hbase/data/default/emp1/40d07c9670bb5af19db3bad4900a6e7b/recovered.edits <dir>
+/hbase/data/default/emp1/40d07c9670bb5af19db3bad4900a6e7b/recovered.edits/49.seqid 0 bytes, 0 block(s):  OK
+
+/hbase/data/default/employee <dir>
+/hbase/data/default/employee/.tabledesc <dir>
+/hbase/data/default/employee/.tabledesc/.tableinfo.0000000001 776 bytes, 1 block(s):  OK
+0. BP-333635372-127.0.0.1-1508779710286:blk_1073743394_2583 len=776 Live_repl=1
+
+/hbase/data/default/employee/.tmp <dir>
+/hbase/data/default/employee/fb0fc27067092ff287033fa1df7e0ea8 <dir>
+/hbase/data/default/employee/fb0fc27067092ff287033fa1df7e0ea8/.regioninfo 43 bytes, 1 block(s):  OK
+0. BP-333635372-127.0.0.1-1508779710286:blk_1073743395_2584 len=43 Live_repl=1
+
+/hbase/data/default/employee/fb0fc27067092ff287033fa1df7e0ea8/age <dir>
+/hbase/data/default/employee/fb0fc27067092ff287033fa1df7e0ea8/name <dir>
+/hbase/data/default/employee/fb0fc27067092ff287033fa1df7e0ea8/recovered.edits <dir>
+/hbase/data/default/employee/fb0fc27067092ff287033fa1df7e0ea8/recovered.edits/24.seqid 0 bytes, 0 block(s):  OK
+
+/hbase/data/default/employee/fb0fc27067092ff287033fa1df7e0ea8/sal <dir>
+/hbase/data/default/student <dir>
+/hbase/data/default/student/.tabledesc <dir>
+/hbase/data/default/student/.tabledesc/.tableinfo.0000000001 549 bytes, 1 block(s):  OK
+0. BP-333635372-127.0.0.1-1508779710286:blk_1073743135_2324 len=549 Live_repl=1
+
+/hbase/data/default/student/.tmp <dir>
+/hbase/data/default/student/f690654a093f56c53beded27bb60ef63 <dir>
+/hbase/data/default/student/f690654a093f56c53beded27bb60ef63/.regioninfo 42 bytes, 1 block(s):  OK
+0. BP-333635372-127.0.0.1-1508779710286:blk_1073743136_2325 len=42 Live_repl=1
+
+/hbase/data/default/student/f690654a093f56c53beded27bb60ef63/college data <dir>
+/hbase/data/default/student/f690654a093f56c53beded27bb60ef63/college data/a25611e70f15475daa823fb44e2819ea 1052 bytes, 1 block(s):  OK
+0. BP-333635372-127.0.0.1-1508779710286:blk_1073743201_2390 len=1052 Live_repl=1
+
+/hbase/data/default/student/f690654a093f56c53beded27bb60ef63/personal data <dir>
+/hbase/data/default/student/f690654a093f56c53beded27bb60ef63/personal data/0778a83f889a4884a1aa14b052397e28 1068 bytes, 1 block(s):  OK
+0. BP-333635372-127.0.0.1-1508779710286:blk_1073743202_2391 len=1068 Live_repl=1
+
+/hbase/data/default/student/f690654a093f56c53beded27bb60ef63/recovered.edits <dir>
+/hbase/data/default/student/f690654a093f56c53beded27bb60ef63/recovered.edits/31.seqid 0 bytes, 0 block(s):  OK
+
+/hbase/data/hbase <dir>
+/hbase/data/hbase/meta <dir>
+/hbase/data/hbase/meta/.tabledesc <dir>
+/hbase/data/hbase/meta/.tabledesc/.tableinfo.0000000001 398 bytes, 1 block(s):  OK
+0. BP-333635372-127.0.0.1-1508779710286:blk_1073742749_1925 len=398 Live_repl=1
+
+/hbase/data/hbase/meta/.tmp <dir>
+/hbase/data/hbase/meta/1588230740 <dir>
+/hbase/data/hbase/meta/1588230740/.regioninfo 32 bytes, 1 block(s):  OK
+0. BP-333635372-127.0.0.1-1508779710286:blk_1073742748_1924 len=32 Live_repl=1
+
+/hbase/data/hbase/meta/1588230740/.tmp <dir>
+/hbase/data/hbase/meta/1588230740/info <dir>
+/hbase/data/hbase/meta/1588230740/info/0ca03271712542b5b5d96c4e837e5040 2728 bytes, 1 block(s):  OK
+0. BP-333635372-127.0.0.1-1508779710286:blk_1073744799_4002 len=2728 Live_repl=1
+
+/hbase/data/hbase/meta/1588230740/info/859f4d7e4ca643cdb64d22d3132ec56e 19644 bytes, 1 block(s):  OK
+0. BP-333635372-127.0.0.1-1508779710286:blk_1073744565_3768 len=19644 Live_repl=1
+
+/hbase/data/hbase/meta/1588230740/recovered.edits <dir>
+/hbase/data/hbase/meta/1588230740/recovered.edits/223.seqid 0 bytes, 0 block(s):  OK
+
+/hbase/data/hbase/namespace <dir>
+/hbase/data/hbase/namespace/.tabledesc <dir>
+/hbase/data/hbase/namespace/.tabledesc/.tableinfo.0000000001 312 bytes, 1 block(s):  OK
+0. BP-333635372-127.0.0.1-1508779710286:blk_1073742753_1929 len=312 Live_repl=1
+
+/hbase/data/hbase/namespace/.tmp <dir>
+/hbase/data/hbase/namespace/ea0d056c5d6dc5b68953a606193f22fd <dir>
+/hbase/data/hbase/namespace/ea0d056c5d6dc5b68953a606193f22fd/.regioninfo 42 bytes, 1 block(s):  OK
+0. BP-333635372-127.0.0.1-1508779710286:blk_1073742754_1930 len=42 Live_repl=1
+
+/hbase/data/hbase/namespace/ea0d056c5d6dc5b68953a606193f22fd/info <dir>
+/hbase/data/hbase/namespace/ea0d056c5d6dc5b68953a606193f22fd/info/bc2303f3f60c4f6cb711fa2012231b72 1079 bytes, 1 block(s):  OK
+0. BP-333635372-127.0.0.1-1508779710286:blk_1073742763_1941 len=1079 Live_repl=1
+
+/hbase/data/hbase/namespace/ea0d056c5d6dc5b68953a606193f22fd/recovered.edits <dir>
+/hbase/data/hbase/namespace/ea0d056c5d6dc5b68953a606193f22fd/recovered.edits/42.seqid 0 bytes, 0 block(s):  OK
+
+/hbase/hbase.id 42 bytes, 1 block(s):  OK
+0. BP-333635372-127.0.0.1-1508779710286:blk_1073742747_1923 len=42 Live_repl=1
+
+/hbase/hbase.version 7 bytes, 1 block(s):  OK
+0. BP-333635372-127.0.0.1-1508779710286:blk_1073742746_1922 len=7 Live_repl=1
+
+/hbase/oldWALs <dir>
+/solr <dir>
+/tmp <dir>
+/tmp/.cloudera_health_monitoring_canary_files <dir>
+/tmp/.cloudera_health_monitoring_canary_files/.canary_file_2022_01_12-21_42_19 0 bytes, 0 block(s):  OK
+
+/tmp/hadoop-yarn <dir>
+/tmp/hadoop-yarn/staging <dir>
+/tmp/hadoop-yarn/staging/cloudera <dir>
+/tmp/hadoop-yarn/staging/cloudera/.staging <dir>
+/tmp/hadoop-yarn/staging/history <dir>
+/tmp/hadoop-yarn/staging/history/done <dir>
+FSCK ended at Thu Jan 13 02:14:02 PST 2022 in 70 milliseconds
+Permission denied: user=cloudera, access=READ_EXECUTE, inode="/tmp/hadoop-yarn/staging/history/done":mapred:mapred:drwxrwx---
+
+
+Fsck on path '/' FAILED
+[cloudera@quickstart hadoop]$ 
+
