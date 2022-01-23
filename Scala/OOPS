@@ -1,0 +1,125 @@
+package ScalaPractice
+
+class Bus1{
+  var Bus_Name:String="Redbus";
+  var Bus_No:Int=201;
+}
+class Bus2 extends Bus1{
+  var Bus_Type:String="Luxury";
+  var Bus_Ticket:Int=500;
+
+  def details(): Unit ={
+    println("bus_name:" +Bus_Name);
+    println("bus_no:" +Bus_No);
+    println("bus_type:" +Bus_Type);
+    println("bus_ticket:" +Bus_Ticket);
+  }
+}
+
+class Bus3 extends Bus2{
+  def disp(): Unit ={
+    println("bus_name:" +Bus_Name+ " " +"bus_no:" +Bus_No+ " " +"bus_type:" +Bus_Type+ " " +"bus_ticket:" +Bus_Ticket);
+  }
+}
+
+--------------
+
+package ScalaPractice
+class Carrr {
+  var model: String = "Innova 2.5";
+  var prize: Int = 3000000;
+
+  def display(): Unit = {
+    println("the model of the car is:" + model);
+    println("the prize of the car is:" + prize);
+  }
+}
+  object Car {
+    def main(args: Array[String]): Unit = {
+      var a = new Carrr();
+      a.display();
+    }
+  }
+
+--------------
+
+package ScalaPractice
+
+class Dog1{
+  var name:String="Puppy";
+  var breed:String="pomarian";
+  var age:Int=2;
+  def disp(): Unit ={
+    println("name of the dog is" +name);
+    println("breed of the dog is" +breed);
+    println("age is" +age);
+  }
+}
+object Dog{
+  def main(args: Array[String]): Unit ={
+    var oj=new Dog1();
+    oj.disp();
+  }
+}
+
+--------------
+
+package ScalaPractice
+
+class Parent1{
+  var Name:String="Sarah";
+  var Age:Int=30;
+}
+class Child1 extends Parent1{
+  def c1Disp(): Unit ={
+    println("Name of the parent:" +Name);
+    println("Age" +Age);
+  }
+}
+class Child2 extends Parent1{
+  var Surname:String="Zamani";
+  def c2Disp(): Unit ={
+    println("Name of the Parent:" +Name);
+    println("Surname of the Parent:" +Surname);
+    println("age:" +Age);
+  }
+}
+object Hierar {
+  def main(args: Array[String]): Unit ={
+    var d=new Child1();
+    var d1=new Child2();
+    d.c1Disp();
+    d1.c2Disp();
+  }
+}
+
+----------------
+
+package ScalaPractice
+
+class Parent1{
+  var Name:String="Sarah";
+  var Age:Int=30;
+}
+class Child1 extends Parent1{
+  def c1Disp(): Unit ={
+    println("Name of the parent:" +Name);
+    println("Age" +Age);
+  }
+}
+class Child2 extends Parent1{
+  var Surname:String="Zamani";
+  def c2Disp(): Unit ={
+    println("Name of the Parent:" +Name);
+    println("Surname of the Parent:" +Surname);
+    println("age:" +Age);
+  }
+}
+object Hierar {
+  def main(args: Array[String]): Unit ={
+    var d=new Child1();
+    var d1=new Child2();
+    d.c1Disp();
+    d1.c2Disp();
+  }
+}
