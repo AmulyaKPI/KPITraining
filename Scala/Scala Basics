@@ -1,0 +1,111 @@
+package ScalaPractice
+
+import scala.util.control.Breaks.{break, breakable}
+
+
+object Main {
+  def main(args: Array[String]){
+//variables
+
+    /*var myfun1=(str1:String, str2:String)=>str1+str2
+    var myfun2=(_:String)+(_:String)
+    println(myfun1("hello","Amulya"))
+    println(myfun2("welcome","india"))*/
+
+    /*var `name` = "Siya";
+    var _age = 20;
+    var Branch = "Computer Science";
+    println("Name:" +`name`);
+    println("Age:" +_age);
+    println("branch:" +Branch);*/
+
+    /*var num_+ = 20;
+    println("Display the result of mixed identifier:" +num_+);
+    println(num_+);
+    var `name` = "Siya"
+    var `age` = 20
+    println("Name:" +`name`);
+    println("Age:" +`age`);*/
+
+    //conditional statements
+
+    /*var name="Amulya";
+    if(name=="Tanuja"){
+      println("Trueeee")
+    }
+    else{
+      println("falseee")
+    }*/
+
+    /*var a=10;
+    var b=20;
+    if(a==b){
+       if(a!=b){
+        println("false");}
+       else{
+        println("True");}}
+    else{
+        println("condition is false");} */
+
+
+    /*val x=10;
+    if(x==20){
+      println("x equals to 20 ");
+    }
+    else if(x==15) {
+      println("x is equals to 15");
+    }
+    else if(x==50) {
+      println("x is equals to 50")
+    }
+    else{
+      println("condition not met")
+    }*/
+
+    //looping statements
+
+    /*var a=10;
+    while(a<=20){
+      println("value of a:" +a);
+      a=a+2;
+    }*/
+
+    /*var a = 10;
+    // using do..while loop
+    do
+    {
+      print(a + " ");
+      a = a - 1;
+    }while(a > 0);*/
+
+    /*var a=10;
+    for(a <- 1 to 10){
+      println("value of a"+a);
+    }*/
+
+    /*var i = 0
+    while ( {
+      i <= 10
+    }) {
+      println("the value of a is:" + i)
+
+      i += 1
+    }*/
+
+    /*breakable
+    {
+      for (a <- 1 to 10)
+      {
+        if (a == 6)
+
+        // terminate the loop when
+        // the value of a is equal to 6
+          break
+        else
+          println(a);
+      }
+    }
+     */
+
+  }
+}
